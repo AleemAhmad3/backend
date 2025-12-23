@@ -8,13 +8,13 @@ This repository is intended to be used as a **starter template** so you never ha
 
 ## ✨ Features
 
-- ✅ Clean & scalable folder structure  
-- ✅ Express app & server separation  
-- ✅ MongoDB connection (Mongoose)  
-- ✅ Centralized error handling  
-- ✅ Async error handler (no try/catch everywhere)  
+- ✅ Clean & scalable folder structure
+- ✅ Express app & server separation
+- ✅ MongoDB connection (Mongoose)
+- ✅ Centralized error handling
+- ✅ Async error handler (no try/catch everywhere)
 - ✅ Security best practices:
-  - Helmet (secure  headers)
+  - Helmet (secure HTTP headers)
   - Rate limiting (environment-based)
   - CORS (dev open, prod restricted)
 - ✅ Request logging (Morgan)
@@ -25,15 +25,15 @@ This repository is intended to be used as a **starter template** so you never ha
 
 ## 🧱 Tech Stack
 
-- Node.js  
-- Express.js  
-- MongoDB + Mongoose  
-- JWT (ready to use)  
-- Helmet  
-- Express Rate Limit  
-- CORS  
-- Morgan  
-- Nodemon  
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT (ready to use)
+- Helmet
+- Express Rate Limit
+- CORS
+- Morgan
+- Nodemon
 
 ---
 
@@ -74,135 +74,128 @@ backend/
 ├── nodemon.json
 ├── package.json
 └── README.md
-⚙️ Installation & Setup
-1️⃣ Clone the repository
+```
+
+## ⚙️ Installation & Setup
+
+**1️⃣ Clone the repository**
+
 ```bash
-
-git clone s://github.com/AleemAhmad3/backend.git
+git clone https://github.com/AleemAhmad3/backend.git
 cd backend
-2️⃣ Install dependencies
-bash
+```
 
+**2️⃣ Install dependencies**
+
+```bash
 npm install
-3️⃣ Setup environment variables
-Create a .env file using the example:
+```
 
-bash
+**3️⃣ Setup environment variables**
 
+```bash
 cp .env.example .env
-Update values as needed:
+```
 
-env
-
+```bash
 PORT=5000
 NODE_ENV=development
 MONGO_URI=mongodb://localhost:27017/app
-CORS_ORIGIN=://localhost:3000
+CORS_ORIGIN=http://localhost:3000
 JWT_SECRET=your_secret_here
-4️⃣ Run the project
-Development
+```
 
-bash
+**4️⃣ Run the project**
 
+**Development**
+
+```bash
 npm run dev
-Production
+```
 
-bash
+**Production**
 
+```bash
 npm start
-🔐 Security Configuration
-Helmet
-Adds secure  headers
+```
 
-Protects against common web vulnerabilities
+## 🔐 Security Configuration
+
+**Helmet**
+
+Adds secure HTTP headers and protects against common web vulnerabilities.
 
 Rate Limiting
+
 Development: 1000 requests / 15 minutes
 
 Production: 100 requests / 15 minutes
 
 Configured in:
 
-bash
-
+```bash
 src/middlewares/rate-limit-middleware.js
-CORS
+```
+
+**CORS**
+
 Development: Allows all origins
 
-Production: Allows only specified origins via CORS_ORIGIN
+Production: Uses CORS_ORIGIN
 
 Configured in:
 
-bash
-
+```bash
 src/middlewares/cors-middleware.js
-🧠 Environment-based Behavior
-Feature	Development	Production
-Logging	Enabled	Disabled
-Rate limit	Relaxed	Strict
-Error stack	Visible	Hidden
-CORS	Open	Restricted
+```
 
-🛠 Scripts
-json
+```bash
+| Feature     | Development | Production |
+| ----------- | ----------- | ---------- |
+| Logging     | Enabled     | Disabled   |
+| Rate limit  | Relaxed     | Strict     |
+| Error stack | Visible     | Hidden     |
+| CORS        | Open        | Restricted |
+```
 
+## 🛠 Scripts
+
+```bash
 {
   "dev": "cross-env NODE_ENV=development nodemon src/server.js",
   "start": "cross-env NODE_ENV=production node src/server.js",
   "test": "echo \"Error: no test specified\" && exit 1"
 }
-cross-env is used to ensure environment variables work consistently across all operating systems.
 
-🧪 Health Check
-Once running, test the API:
+```
 
+cross-env ensures environment variables work consistently across OSes.
 
+## 🧪 Health Check
 
+```bash
 GET /api
-🚀 How to Use This as a Template
-Push this repo to GitHub
+```
+
+## How to Use This as a Template
 
 Go to Settings → Template Repository
 
 Enable Template Repository
 
-Click Use this template for new projects
+Click Use this template
 
-🔮 Ready for Extension
-You can easily add:
+## 📄 License
 
-Authentication (JWT)
-
-Role-based access control
-
-Request validation (Zod / Joi)
-
-API versioning
-
-Docker & deployment
-
-TypeScript
-
-📌 Best Practices Followed
-Separation of concerns
-
-Centralized configuration
-
-Middleware-based architecture
-
-Production-safe defaults
-
-Developer-friendly setup
-
-📄 License
 ISC License
 
-🤝 Contributing
-Feel free to fork, improve, and submit pull requests.
+## 🤝 Contributing
 
-⭐ Final Note
+Feel free to fork,improve, and submit pull requests.
+
+## ⭐ Final Note
+
 This boilerplate is designed to help you:
-
 Build faster
 
 Avoid repetitive setup

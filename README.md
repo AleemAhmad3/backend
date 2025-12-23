@@ -76,7 +76,7 @@ backend/
 └── README.md
 ⚙️ Installation & Setup
 1️⃣ Clone the repository
-bash
+```bash
 
 git clone s://github.com/AleemAhmad3/backend.git
 cd backend
